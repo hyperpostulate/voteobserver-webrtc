@@ -5,4 +5,4 @@ This project is a very basic implementation of WebRTC protocol, as term project 
 
 It consist of ballot box and watcher applications, and a signaling server.
 
-Applications are based on mslosarz's nextrtc-signaling-server [ https://github.com/mslosarz/nextrtc-signaling-server/ ]
+Applications using mslosarz's nextrtc-signaling-server [ https://github.com/mslosarz/nextrtc-signaling-server/ ]
