@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @EnableAutoConfiguration
 @Import(EndpointConfig.class)
-public class SampleWebStaticApplication {
+public class WatcherApplicationEntryPoint {
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleWebStaticApplication.class, args);
+		SpringApplication.run(WatcherApplicationEntryPoint.class, args);
 	}
 }

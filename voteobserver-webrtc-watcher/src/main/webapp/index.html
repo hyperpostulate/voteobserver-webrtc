@@ -49,28 +49,26 @@
 			nextRTC.leave();
 		};
 
-		var nextRTC = new NextRTC(
-				{
-					wsURL : 'wss://' + 'localhost:8083'
-							+ '/signaling',
-					mediaConfig : {
-						video : true,
-						audio : true,
-					},
-					peerConfig : {
-						iceServers : [ {
-							urls : "stun:23.21.150.121"
-						}, {
-							urls : "stun:stun.l.google.com:19302"
-						}, {
-							urls : "turn:numb.viagenie.ca",
-							credential : "webrtcdemo",
-							username : "louis@mozilla.com"
-						} ],
-						iceTransportPolicy : 'all',
-						rtcpMuxPolicy : 'negotiate'
-					}
-				});
+		var nextRTC = new NextRTC({
+			wsURL : 'wss://' + 'localhost:8083' + '/signaling',
+			mediaConfig : {
+				video : true,
+				audio : true,
+			},
+			peerConfig : {
+				iceServers : [ {
+					urls : "stun:23.21.150.121"
+				}, {
+					urls : "stun:stun.l.google.com:19302"
+				}, {
+					urls : "turn:numb.viagenie.ca",
+					credential : "webrtcdemo",
+					username : "louis@mozilla.com"
+				} ],
+				iceTransportPolicy : 'all',
+				rtcpMuxPolicy : 'negotiate'
+			}
+		});
 
 		nextRTC
 				.on(
@@ -87,7 +85,7 @@
 		nextRTC.on('joined', function(nextRTC, event) {
 			console.log(JSON.stringify(event));
 			$('#log').append(
-					'<li>You have been joined to conversation ' + event.content
+					'<li>You have been joined to observation of Ballot Box ' + event.content
 							+ '</li>');
 		});
 
@@ -95,7 +93,7 @@
 			console.log(JSON.stringify(event));
 			$('#log').append(
 					'<li>Member with id ' + event.from
-							+ ' has joined conversation</li>');
+							+ ' has joined the observation</li>');
 		});
 
 		nextRTC.on('localStream', function(member, stream) {
